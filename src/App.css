@@ -1,38 +1,259 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bodyBg:#F8F8FB;
+  --purple:#7C5DFA;
+  --white: #FFFFFF;
+  --fontColor1:#0C0E16;
+  --fontColor2:#888EB0;
+  --sideBarBg:#373B53;
+}
+
+body {
+  background: var(--bodyBg);
+  font-family: 'Spartan', sans-serif;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding-top: 72px;
+}
+
+.side-bar {
+  height: 100vh;
+  width: 103px;
+  position: fixed;
+  background: var(--sideBarBg);
+  left: 0;
+  top: 0;
+  border-radius: 0px 20px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.side-bar-logo {
+  width: 100%;
+  height: 103px;
+  position: relative;
+  background: var(--purple);
+  border-radius: 0px 20px 20px 0px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.side-bar-logo img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+.side-bar-logo-bg {
+  height: 50%;
+  width: 100%;
+  background: #9277FF;
+  border-radius: 20px 0px 20px 0px;
+}
+
+.side-bar-bottom {
+  width: 100%;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side-bar-bottom img {
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.user-img {
+  padding: 24px 0;
+  border-top: 1px solid #494E6E;
+  margin-top: 32px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-img img {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.invoices {
+  width: 730px;
+}
+
+.invoices-head {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 65px;
+}
+
+.invoices-head-left p {
+  color: var(--fontColor2);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.invoices-head-left h1 {
+  font-size: 32px;
+  line-height: 36px;
+  letter-spacing: -1px;
+  color: var(--fontColor1);
+}
+
+.invoices-head-right {
+  display: flex;
+  align-items: center;
+}
+
+.filter {
+  margin-right: 40px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--fontColor1);
+  cursor: pointer;
+}
+
+.filter img {
+  margin-left: 16px;
+}
+
+.new-invoice {
+  height: 48px;
+  width: 150px;
+  background: var(--purple);
+  display: flex;
+  border-radius: 24px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px 0 8px;
+  cursor: pointer;
+}
+
+.new-invoice div {
+  background: white;
+  width: 32px;
+  height: 32px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 50%;
 }
 
-.App-link {
-  color: #61dafb;
+.new-invoice div img {
+  margin-top: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.new-invoice p {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--white);
+}
+
+.invoice {
+  width: 100%;
+  background: var(--white);
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+  padding: 16px 24px 16px 32px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.invoice-info {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.invoice-id {
+  margin-right: 43px;
+  width: 10%;
+}
+
+.invoice-id h3 {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--fontColor1);
+}
+
+.invoice-id span {
+  color: #7E88C3;
+}
+
+.invoice-date {
+  margin-right: 45px;
+  width: 22%;
+}
+
+.invoice-date p, .invoice-name p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--fontColor2);
+}
+
+.invoice-sum {
+  flex-grow: 1;
+  text-align: right;
+}
+
+.invoice-sum h2 {
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.8px;
+  color: var(--fontColor1);
+}
+
+.invoice-status {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.invoice-status img {
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.status-container{
+  height: 40px;
+  width: 104px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+}
+
+.status-container div {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-container p {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  text-transform: capitalize;
 }

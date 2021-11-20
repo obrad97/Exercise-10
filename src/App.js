@@ -1,10 +1,23 @@
-
 import './App.css';
+import Invoices from "./components/Invoices";
+import SideBar from './components/SideBar';
+import InvoiceDetails from './components/InvoiceDetails';
+import {InvoiceProvider} from "./context/InvoiceContext"
+import { BrowserRouter as Router, Routes, Route} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
+    <InvoiceProvider>
+    <div className="container">
+      <Router>
+        <SideBar/>
+        <Routes>
+          <Route path="/" exact element={<Invoices/>}/>
+          <Route path="invoice/:id" exact element={<InvoiceDetails/>}/>
+        </Routes>
+      </Router>
     </div>
+    </InvoiceProvider>
   );
 }
 
