@@ -10,7 +10,11 @@
   --white: #FFFFFF;
   --fontColor1:#0C0E16;
   --fontColor2:#888EB0;
+  --fontColor3: #7E88C3;
   --sideBarBg:#373B53;
+  --editBtnBg: #F9FAFE;
+  --pricingBg: #373B53;
+  --inputBorder: #DFE3FA;
 }
 
 body {
@@ -33,6 +37,7 @@ body {
   background: var(--sideBarBg);
   left: 0;
   top: 0;
+  z-index: 1;
   border-radius: 0px 20px 20px 0px;
   display: flex;
   flex-direction: column;
@@ -47,6 +52,7 @@ body {
   border-radius: 0px 20px 20px 0px;
   display: flex;
   align-items: flex-end;
+  cursor: pointer;
 }
 
 .side-bar-logo img {
@@ -257,3 +263,369 @@ body {
   letter-spacing: -0.25px;
   text-transform: capitalize;
 }
+
+.invoice-details {
+  width: 730px;
+  margin: 0 auto;
+}
+
+.go-back-btn {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--fontColor1);
+  margin-bottom: 32px;
+  cursor: pointer;
+}
+
+.go-back-btn img {
+  margin-right: 22px;
+}
+
+.invoice-details-head {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 32px;
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+  background: var(--white);
+  margin-bottom: 24px;
+}
+
+.invoice-details-status {
+  display: flex;
+  align-items: center;
+}
+
+.invoice-details-status p {
+  margin-right: 16px;
+  color: var(--fontColor2);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.invoice-details-buttons button {
+  height: 48px;
+  font-family: 'Spartan', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  border-radius: 24px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn {
+  width: 73px;
+  color: var(--fontColor2);
+  background: var(--editBtnBg);
+  margin-right: 8px;
+}
+
+.delete-btn {
+  width: 89px;
+  color: var(--white);
+  background: #EC5757;
+  margin-right: 8px;
+}
+
+.paid-btn {
+  width: 131px;
+  color: var(--white);
+  background: var(--purple);
+}
+
+.invoice-details-main {
+  padding: 48px;
+  background: var(--white);
+  box-shadow: 0px 10px 10px -10px rgba(72, 84, 159, 0.100397);
+  border-radius: 8px;
+}
+
+.id-and-sender-address {
+  display: flex;
+  justify-content: space-between;
+}
+
+.id-and-project-name h3{
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.8px;
+  color: var(--fontColor1);
+  margin-bottom: 8px;
+}
+
+.id-and-project-name span {
+  color:#7E88C3;
+}
+
+.id-and-project-name p {
+  color: var(--fontColor3);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.sender-address p {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.229167px;
+  color: var(--fontColor3);
+  text-align: right;
+}
+
+.recipient-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 21px;
+  margin-bottom: 45px;
+}
+
+.recipient-info p {
+  color: var(--fontColor3);
+}
+
+.recipient-info h3 {
+  color: var(--fontColor1);
+} 
+
+.dates p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  margin-bottom: 12px;
+}
+
+.dates h3 {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.3125px;
+}
+
+.date-created {
+  margin-bottom: 32px;
+}
+
+.bill-to p:first-child {
+  margin-bottom: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.bill-to h3 {
+  margin-bottom: 8px;
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.3125px;
+}
+
+.bill-to p {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.229167px;
+}
+
+.sent-to p {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  margin-bottom: 12px;
+}
+
+.sent-to h3 {
+  font-size: 15px;
+  line-height: 20px;
+  letter-spacing: -0.3125px;
+}
+
+.pricing {
+  width: 100%;
+  background: var(--editBtnBg);
+  border-radius: 8px;
+  padding-top: 32px;
+}
+
+.item-grid {
+  display: grid;
+  grid-template-columns: 45% 15% 15% 25%;
+  grid-template-rows: auto;
+}
+
+.items {
+  padding: 0 32px;
+}
+
+.item-labels {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.229167px;
+  color: var(--fontColor3);
+  margin-bottom: 32px;
+}
+
+.item-prices,
+.item-total-prices,
+.item-total,
+.item-price {
+  text-align: right;
+}
+
+.item-quantities,
+.item-quantity {
+  text-align: center;
+}
+
+.item {
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+.item h3 {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+}
+
+.item-name,
+.item-total {
+  color: var(--fontColor1);
+}
+
+.item-quantity,
+.item-price {
+  color: var(--fontColor3);
+}
+
+.amount-due {
+  background: var(--pricingBg);
+  padding: 24px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0px 0px 8px 8px;
+  color: var(--white);
+}
+
+.amount-due p {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 18px;
+  letter-spacing: -0.229167px;
+}
+
+.amount-due h3 {
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+}
+
+.invoice-edit-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.invoice-edit-active {
+  display: block;
+}
+
+.inovice-edit {
+  overflow: auto;
+  position: absolute;
+  left: 85px;
+  height: 100%;
+  width: 620px;
+  padding: 56px 56px 32px 74px;
+  background: var(--white);
+  border-radius: 0px 20px 20px 0px;
+}
+
+.inovice-edit h1 {
+  margin-bottom: 48px;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  color: var(--fontColor1);
+}
+
+.inovice-edit h5 {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #7C5DFA;
+  margin-bottom: 24px;
+}
+
+.inovice-edit label {
+  display: block;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--fontColor3);
+  margin-bottom: 10px;
+}
+
+.inovice-edit input {
+  height: 48px;
+  display: block;
+  border: 1px solid #DFE3FA;
+  border-radius: 4px;
+  outline: none;
+  background: var(--white);
+  color: var(--fontColor1);
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  padding: 0 20px;
+}
+
+.bill-from-street {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.bill-from-details,
+.bill-to-details
+{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 48px;
+}
+
+.bill-from-details input {
+  width: 152px;
+}
+
+.bill-to {
+  width: 100%;
+}
+
+.bill-to input {
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.bill-to-details input {
+  width: 152px;
+}
+

@@ -29,7 +29,7 @@ const Invoice = ({data}) => {
                 <p>{data.clientName}</p>
                 </div>
                 <div className="invoice-sum">
-                <h2>£ {sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h2>
+                <h2>&pound; {sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}</h2>
                 </div>
             </div>
             <div className= "invoice-status">

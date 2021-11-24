@@ -5,18 +5,21 @@ import { InvoiceContext } from "../context/InvoiceContext";
 import Invoice from "./Invoice";
 
 function Invoices() {
-    const [invoices, setInvoices] = useContext(InvoiceContext);
-    console.log(invoices);
+    const {invoices, modal} = useContext(InvoiceContext);
+    const [invoicesData, setInvoicesData] = invoices;
+    const [modalValue, setModalValue] = modal;
     return (
         <main className="invoices">
             <section className="invoices-head">
                 <div className="invoices-head-left">
                     <h1>Invoices</h1>
-                    <p>There are 7 total invoices</p>
+                    <p>There are {invoicesData.length} total invoices</p>
                 </div>
                 <div className="invoices-head-right">
                     <p className="filter">Filter by status <img src={arrowDown} alt="arrow down"/></p>
-                    <div className="new-invoice">
+                    <div className="new-invoice" onClick={(e)=> {
+                        setModalValue(true)
+                    }}>
                         <div>
                             <img src={plusIcon} alt="plus icon"/>
                         </div>
@@ -25,7 +28,7 @@ function Invoices() {
                 </div>
             </section>
             <section className="invoices-list">
-                {invoices.map((invoice)=>
+                {invoicesData.map((invoice)=>
                     <Invoice data={invoice} key={invoice.id}/>
                 )}
             </section>
