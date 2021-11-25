@@ -83,7 +83,7 @@ function InvoiceDetails() {
                             <h3>{dueDate[2]} {months[Number(dueDate[1])-1]} {dueDate[0]}</h3>
                         </div>
                     </div>
-                    <div className="bill-to">
+                    <div className="recipient-address">
                         <p>Bill To</p>
                         <h3>{invoice.clientName}</h3>
                         <p>{invoice.clientAddress.street}</p>

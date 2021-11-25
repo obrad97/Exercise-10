@@ -13,7 +13,6 @@
   --fontColor3: #7E88C3;
   --sideBarBg:#373B53;
   --editBtnBg: #F9FAFE;
-  --pricingBg: #373B53;
   --inputBorder: #DFE3FA;
 }
 
@@ -414,7 +413,7 @@ body {
   margin-bottom: 32px;
 }
 
-.bill-to p:first-child {
+.recipient-address p:first-child {
   margin-bottom: 12px;
   font-weight: 500;
   font-size: 12px;
@@ -422,14 +421,14 @@ body {
   letter-spacing: -0.25px;
 }
 
-.bill-to h3 {
+.recipient-address h3 {
   margin-bottom: 8px;
   font-size: 15px;
   line-height: 20px;
   letter-spacing: -0.3125px;
 }
 
-.bill-to p {
+.recipient-address p {
   font-weight: 500;
   font-size: 11px;
   line-height: 18px;
@@ -510,7 +509,7 @@ body {
 }
 
 .amount-due {
-  background: var(--pricingBg);
+  background: var(--sideBarBg);
   padding: 24px 32px;
   display: flex;
   justify-content: space-between;
@@ -547,7 +546,7 @@ body {
   display: block;
 }
 
-.inovice-edit {
+.invoice-edit {
   overflow: auto;
   position: absolute;
   left: 85px;
@@ -558,7 +557,7 @@ body {
   border-radius: 0px 20px 20px 0px;
 }
 
-.inovice-edit h1 {
+.invoice-edit h1 {
   margin-bottom: 48px;
   font-size: 24px;
   line-height: 32px;
@@ -566,7 +565,7 @@ body {
   color: var(--fontColor1);
 }
 
-.inovice-edit h5 {
+.invoice-edit h5 {
   font-size: 12px;
   line-height: 15px;
   letter-spacing: -0.25px;
@@ -574,7 +573,7 @@ body {
   margin-bottom: 24px;
 }
 
-.inovice-edit label {
+.invoice-edit label {
   display: block;
   font-weight: 500;
   font-size: 12px;
@@ -584,14 +583,14 @@ body {
   margin-bottom: 10px;
 }
 
-.inovice-edit input {
+.invoice-edit input {
   height: 48px;
   display: block;
-  border: 1px solid #DFE3FA;
+  border: 1px solid var(--inputBorder);
   border-radius: 4px;
-  outline: none;
   background: var(--white);
   color: var(--fontColor1);
+  font-family: 'Spartan', sans-serif;
   font-weight: bold;
   font-size: 12px;
   line-height: 15px;
@@ -599,9 +598,19 @@ body {
   padding: 0 20px;
 }
 
+.invoice-edit input:focus {
+  border: 1px solid var(--purple);
+  outline-offset: 0px;
+  outline: none;
+}
+
 .bill-from-street {
   width: 100%;
   margin-bottom: 24px;
+}
+
+.bill-from {
+  margin-bottom: 48px;
 }
 
 .bill-from-details,
@@ -609,7 +618,6 @@ body {
 {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 48px;
 }
 
 .bill-from-details input {
@@ -618,6 +626,7 @@ body {
 
 .bill-to {
   width: 100%;
+  margin-bottom: 25px;
 }
 
 .bill-to input {
@@ -628,4 +637,182 @@ body {
 .bill-to-details input {
   width: 152px;
 }
+
+.bill-date {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.bill-date input, .payment-terms {
+  width: 220px;
+}
+
+.payment-terms {
+  position: relative;
+  height: 48px;
+  border: 1px solid #DFE3FA;
+  background: var(--white);
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  padding: 0 20px;
+  color: var(--fontColor1); 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.payment-terms ul {
+  display: none;
+  list-style: none;
+  position: absolute;
+  background: var(--white);
+  box-shadow: 0px 10px 20px rgba(72, 84, 159, 0.25);
+  border-radius: 8px;
+  width: 100%;
+  left: 0;
+  top: 51px;
+}
+
+.payment-terms .active {
+  display: block;
+}
+
+.payment-terms ul li {
+  padding: 15px 24px;
+  border-bottom: 1px solid #DFE3FA;
+  cursor: pointer;
+}
+
+.payment-terms ul li:hover {
+  color: var(--purple);
+}
+
+.arrow-up {
+  transform: rotate(180deg);
+}
+
+.project-desc {
+  width: 100%;
+  margin-bottom: 48px;
+}
+
+.item-list h3 {
+  font-size: 18px;
+  line-height: 32px;
+  letter-spacing: -0.375px;
+  color: #777F98;
+  margin-bottom: 16px;
+}
+
+.item-list-items div {
+  display: grid;
+  grid-template-columns: 214px 46px 100px auto;
+  grid-column-gap: 16px;
+  margin-bottom: 18px;
+}
+
+.item-list-qty {
+  padding: 12px !important;
+}
+
+.item-list-qty::-webkit-outer-spin-button,
+.item-list-qty::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.item-list-price::-webkit-outer-spin-button,
+.item-list-price::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.item-list button {
+  width: 100%;
+  height: 48px;
+  border-radius: 24px;
+  outline: none;
+  border: none;
+  background: var(--editBtnBg);
+  font-family: 'Spartan', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: var(--fontColor3);
+  cursor: pointer;
+  margin-bottom: 39px;
+}
+
+.item-list-items section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item-list-items p {
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  color: #888EB0;
+}
+
+.remove-item {
+  cursor: pointer;
+}
+
+.remove-item:hover path {
+  fill: #EC5757;
+}
+
+.from-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.from-buttons button {
+  height: 48px;
+  border-radius: 24px;
+  border: none;
+  outline: none;
+  font-family: 'Spartan', sans-serif;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: -0.25px;
+  cursor: pointer;
+}
+
+.discard {
+  color: var(--fontColor3);
+  background: var(--editBtnBg);
+  width: 96px;
+}
+
+.save-draft {
+  width: 133px;
+  background: var(--sideBarBg);
+  color: var(--fontColor2);
+  margin-right: 8px;
+}
+
+.save-send {
+  width: 133px;
+  background: var(--purple);
+  color: var(--white);
+}
+
+
+
+
+
 
